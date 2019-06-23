@@ -239,7 +239,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\n  <h1>\n    {{ title }} WIP\n  </h1>\n</div>"
+module.exports = "<div style=\"text-align:center\">\n  <h1>\n    {{ title }}\n  </h1>\n  <h2>My Portfolio Website (Work In Progress)</h2>\n</div>"
 
 /***/ }),
 
@@ -259,7 +259,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var HomeComponent = /** @class */ (function () {
     function HomeComponent() {
-        this.title = 'Roshan Krishnan Thirikkott | My Portfolio';
+        this.title = 'Roshan Krishnan Thirikkott';
     }
     HomeComponent.prototype.ngOnInit = function () {
     };
