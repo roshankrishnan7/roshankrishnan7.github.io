@@ -7,10 +7,10 @@ body {
     font-family: 'Bitter', serif;
     vertical-align: middle;
     text-align: center;
-    padding: 70px 0;
     top: 50%;
 }
 
 h1 {
     font-size: 3em !important;
+    padding: 70px 0;
 }
