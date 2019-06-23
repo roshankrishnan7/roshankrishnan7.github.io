@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "npm run build && gh-pages -d dist/roshankrishnan7"
+    "deploy": "npm run build && gh-pages -b master -d dist/roshankrishnan7"
   },
   "private": true,
   "dependencies": {
