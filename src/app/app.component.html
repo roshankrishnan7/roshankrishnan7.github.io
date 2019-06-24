@@ -1,8 +1,14 @@
 <div class="columns">
-    <div class="column is-three-quarters">
-        <router-outlet></router-outlet>
-    </div>
-    <div class="column">
-        <app-navbar></app-navbar>
-    </div>
+  <div class="column is-three-quarters">
+    <section class="hero has-background-white-ter is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="column">
+    <app-navbar></app-navbar>
+  </div>
 </div>
