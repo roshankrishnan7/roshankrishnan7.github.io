@@ -1,0 +1,23 @@
+.about-btn {
+    animation-duration: .4s;
+}
+.skill-btn {
+    animation-duration: .8s;
+}
+.work-btn {
+    animation-duration: 1.2s;
+}
+.project-btn {
+    animation-duration: 1.6s;
+}
+.social-btn {
+    animation-duration: 2s;
+}
+.resume-btn {
+    animation-duration: 2.4s;
+}
+
+a {
+    padding : 20px !important;
+    margin: 10px !important;
+}
