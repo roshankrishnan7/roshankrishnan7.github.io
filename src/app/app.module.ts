@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { TypingAnimationDirective } from 'angular-typing-animation'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -13,6 +15,8 @@ import { SocialsComponent } from './socials/socials.component';
 
 @NgModule({
   declarations: [
+    TypingAnimationDirective,
+
     AppComponent,
     AboutComponent,
     HomeComponent,
