@@ -1,0 +1,12 @@
+img {
+    height: 50px;
+    width : 50px;
+}
+.social-item{
+    padding : 20px !important;
+    margin: 10px !important;
+}
+
+a {
+    padding: 20px;
+}
