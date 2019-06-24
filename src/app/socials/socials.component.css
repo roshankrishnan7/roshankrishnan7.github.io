@@ -1,6 +1,7 @@
 img {
     height: 50px;
     width : 50px;
+    animation-duration: 2.4s;
 }
 .social-item{
     padding : 20px !important;
