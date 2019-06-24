@@ -84,7 +84,7 @@ module.exports = "<div>\n  <app-skill-item class=\"skill-item\" *ngFor=\"let ski
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  socials works!\n</p>\n"
+module.exports = "<div class=\"container\">\n    <mat-icon>email</mat-icon> <a href=\"mailto:roshankrishnan7@gmail.com\">roshankrishnan7@gmail.com</a>\n</div> \n\n"
 
 /***/ }),
 
@@ -286,17 +286,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var angular_typing_animation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-typing-animation */ "./node_modules/angular-typing-animation/index.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
-/* harmony import */ var _skills_skills_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./skills/skills.component */ "./src/app/skills/skills.component.ts");
-/* harmony import */ var _work_work_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./work/work.component */ "./src/app/work/work.component.ts");
-/* harmony import */ var _projects_projects_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./projects/projects.component */ "./src/app/projects/projects.component.ts");
-/* harmony import */ var _socials_socials_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./socials/socials.component */ "./src/app/socials/socials.component.ts");
-/* harmony import */ var _skills_skill_item_skill_item_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./skills/skill-item/skill-item.component */ "./src/app/skills/skill-item/skill-item.component.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var angular_typing_animation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular-typing-animation */ "./node_modules/angular-typing-animation/index.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
+/* harmony import */ var _skills_skills_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./skills/skills.component */ "./src/app/skills/skills.component.ts");
+/* harmony import */ var _work_work_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./work/work.component */ "./src/app/work/work.component.ts");
+/* harmony import */ var _projects_projects_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./projects/projects.component */ "./src/app/projects/projects.component.ts");
+/* harmony import */ var _socials_socials_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./socials/socials.component */ "./src/app/socials/socials.component.ts");
+/* harmony import */ var _skills_skill_item_skill_item_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./skills/skill-item/skill-item.component */ "./src/app/skills/skill-item/skill-item.component.ts");
+
+
 
 
 
@@ -316,23 +320,25 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            angular_typing_animation__WEBPACK_IMPORTED_MODULE_3__["TypingAnimationDirective"],
-            _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-            _about_about_component__WEBPACK_IMPORTED_MODULE_6__["AboutComponent"],
-            _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"],
-            _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__["NavbarComponent"],
-            _skills_skills_component__WEBPACK_IMPORTED_MODULE_9__["SkillsComponent"],
-            _work_work_component__WEBPACK_IMPORTED_MODULE_10__["WorkComponent"],
-            _projects_projects_component__WEBPACK_IMPORTED_MODULE_11__["ProjectsComponent"],
-            _socials_socials_component__WEBPACK_IMPORTED_MODULE_12__["SocialsComponent"],
-            _skills_skill_item_skill_item_component__WEBPACK_IMPORTED_MODULE_13__["SkillItemComponent"]
+            angular_typing_animation__WEBPACK_IMPORTED_MODULE_5__["TypingAnimationDirective"],
+            _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
+            _about_about_component__WEBPACK_IMPORTED_MODULE_8__["AboutComponent"],
+            _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
+            _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__["NavbarComponent"],
+            _skills_skills_component__WEBPACK_IMPORTED_MODULE_11__["SkillsComponent"],
+            _work_work_component__WEBPACK_IMPORTED_MODULE_12__["WorkComponent"],
+            _projects_projects_component__WEBPACK_IMPORTED_MODULE_13__["ProjectsComponent"],
+            _socials_socials_component__WEBPACK_IMPORTED_MODULE_14__["SocialsComponent"],
+            _skills_skill_item_skill_item_component__WEBPACK_IMPORTED_MODULE_15__["SkillItemComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatIconModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
         ],
         providers: [],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
     })
 ], AppModule);
 
