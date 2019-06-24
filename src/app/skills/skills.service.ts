@@ -12,8 +12,7 @@ export class SkillsService {
     new Skill(["Angular", "AngularJS", "React", "CSS"],"Client side"),
     new Skill(["SQL Server", "Oracle", "MongoDB", "MySQL"],"Database"),
     new Skill(["xUnit", "MS Test", "Jasmine", "Protractor", "Selenium"],"Testing"),
-    new Skill(["AWS", "Azure"], "Cloud"),
-    new Skill(["EF", "EF Core", "LINQ", "Docker", "Jenkins", "Kubernetes", "RabbitMQ", "Git", "Bitbucket", "JIRA", "YouTrack",
+    new Skill(["EF", "EF Core", "LINQ", "Docker", "Jenkins", "Kubernetes", "RabbitMQ", "Git", "Bitbucket", "JIRA", "YouTrack", "AWS", "Azure",
     "Visual Studio", "Bootstrap", "Material", "Bulma"],"Other Tools and Frameworks")
 ];
 
