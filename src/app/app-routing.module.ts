@@ -10,7 +10,7 @@ import { SocialsComponent } from './socials/socials.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
-  { path: 'about', component: AboutComponent, pathMatch: 'full' },
+  { path: 'about', component: HomeComponent, pathMatch: 'full' },
   { path: 'skills', component: SkillsComponent, pathMatch: 'full' },
   { path: 'work', component: WorkComponent, pathMatch: 'full' },
   { path: 'projects', component: ProjectsComponent, pathMatch: 'full' },
