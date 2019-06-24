@@ -84820,6 +84820,329 @@ const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('8.0.2
 
 /***/ }),
 
+/***/ "./node_modules/angular-typing-animation/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/angular-typing-animation/index.js ***!
+  \********************************************************/
+/*! exports provided: TypingAnimationModule, TypingAnimationDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _typing_animation_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typing-animation.module */ "./node_modules/angular-typing-animation/typing-animation.module.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TypingAnimationModule", function() { return _typing_animation_module__WEBPACK_IMPORTED_MODULE_0__["TypingAnimationModule"]; });
+
+/* harmony import */ var _typing_animation_directive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./typing-animation.directive */ "./node_modules/angular-typing-animation/typing-animation.directive.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TypingAnimationDirective", function() { return _typing_animation_directive__WEBPACK_IMPORTED_MODULE_1__["TypingAnimationDirective"]; });
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/angular-typing-animation/typed.js":
+/*!********************************************************!*\
+  !*** ./node_modules/angular-typing-animation/typed.js ***!
+  \********************************************************/
+/*! exports provided: Typed */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Typed", function() { return Typed; });
+var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+var Typed = /** @class */ (function () {
+    function Typed(element, options) {
+        var defaults = {
+            typeSpeed: 0,
+            startDelay: 0,
+            showCursor: true,
+            hideCursorOnComplete: false,
+            onComplete: function () { }
+        };
+        this.element = element;
+        this.options = __assign({}, defaults, options);
+        this.textContent = element.textContent.trim();
+        this.strPos = 0;
+        this.typingComplete = false;
+        this.element.textContent = '';
+        this.appendAnimationCss();
+    }
+    Typed.prototype.begin = function () {
+        var _this = this;
+        if (this.typingComplete) {
+            return this.restart();
+        }
+        this.insertCursor();
+        this.timeout = setTimeout(function () {
+            _this.typewrite();
+        }, this.options.startDelay);
+    };
+    Typed.prototype.typewrite = function () {
+        var _this = this;
+        var humanize = this.humanizer(this.options.typeSpeed);
+        this.timeout = setTimeout(function () {
+            _this.toggleBlinking(false);
+            if (_this.strPos === _this.textContent.length) {
+                _this.doneTyping();
+            }
+            else {
+                _this.keepTyping();
+            }
+        }, humanize);
+    };
+    Typed.prototype.keepTyping = function () {
+        if (this.strPos === 0) {
+            this.toggleBlinking(false);
+        }
+        this.strPos += 1;
+        var nextString = this.textContent.substr(0, this.strPos);
+        this.replaceText(nextString);
+        this.typewrite();
+    };
+    Typed.prototype.doneTyping = function () {
+        this.toggleBlinking(true);
+        if (this.textContent.length === this.strPos) {
+            this.complete();
+        }
+    };
+    Typed.prototype.complete = function () {
+        if (this.options.hideCursorOnComplete) {
+            this.removeCursor();
+        }
+        this.typingComplete = true;
+        this.options.onComplete();
+    };
+    Typed.prototype.restart = function () {
+        if (!this.typingComplete) {
+            return;
+        }
+        clearTimeout(this.timeout);
+        this.replaceText('');
+        this.removeCursor();
+        this.strPos = 0;
+        this.typingComplete = false;
+        this.begin();
+    };
+    Typed.prototype.insertCursor = function () {
+        if (this.cursor) {
+            return;
+        }
+        this.cursor = document.createElement('span');
+        this.cursor.className = 'typed-cursor';
+        this.cursor.innerHTML = '|';
+        this.element.parentNode && this.element.parentNode.insertBefore(this.cursor, this.element.nextSibling);
+    };
+    Typed.prototype.removeCursor = function () {
+        if (this.cursor && this.cursor.parentNode) {
+            this.cursor.parentNode.removeChild(this.cursor);
+            this.cursor = null;
+        }
+    };
+    Typed.prototype.replaceText = function (str) {
+        this.element.textContent = str;
+    };
+    Typed.prototype.humanizer = function (speed) {
+        return Math.round(Math.random() * speed / 2) + speed;
+    };
+    Typed.prototype.toggleBlinking = function (isBlinking) {
+        if (!this.cursor) {
+            return;
+        }
+        if (this.cursorBlinking === isBlinking) {
+            return;
+        }
+        this.cursorBlinking = isBlinking;
+        var status = isBlinking ? 'infinite' : 0;
+        this.cursor.style.animationIterationCount = status;
+    };
+    Typed.prototype.appendAnimationCss = function () {
+        if (this.options.showCursor) {
+            if (document.head.querySelector('#typing')) {
+                return;
+            }
+            var css = document.createElement('style');
+            css.type = 'text/css';
+            css.id = 'typing';
+            var innerCss = "\n                .typed-cursor{\n                    opacity: 1;\n                    animation: typedjsBlink 0.7s infinite;\n                    -webkit-animation: typedjsBlink 0.7s infinite;\n                    animation: typedjsBlink 0.7s infinite;\n                }\n                @keyframes typedjsBlink{\n                    50% { opacity: 0.0; }\n                }\n                @-webkit-keyframes typedjsBlink{\n                    0% { opacity: 1; }\n                    50% { opacity: 0.0; }\n                    100% { opacity: 1; }\n                }\n            ";
+            css.innerHTML = innerCss;
+            document.head.appendChild(css);
+        }
+    };
+    return Typed;
+}());
+
+//# sourceMappingURL=typed.js.map
+
+/***/ }),
+
+/***/ "./node_modules/angular-typing-animation/typing-animation.directive.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/angular-typing-animation/typing-animation.directive.js ***!
+  \*****************************************************************************/
+/*! exports provided: TypingAnimationDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TypingAnimationDirective", function() { return TypingAnimationDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _typed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./typed */ "./node_modules/angular-typing-animation/typed.js");
+/* harmony import */ var rxjs_Observable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/Observable */ "./node_modules/rxjs-compat/_esm2015/Observable.js");
+
+
+
+var TypingAnimationDirective = /** @class */ (function () {
+    function TypingAnimationDirective(elRef) {
+        this.elRef = elRef;
+        this.typeSpeed = 0;
+        this.startDelay = 0;
+        this.condition = true;
+        this.hideCursorOnComplete = false;
+        this.complete = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.typingLock = false;
+    }
+    TypingAnimationDirective.prototype.ngOnInit = function () {
+        if (!this.checkContent()) {
+            return;
+        }
+        this.createTyped();
+    };
+    TypingAnimationDirective.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        if (this.typed) {
+            return;
+        }
+        if (!this.checkContent()) {
+            this.contentObservable = new rxjs_Observable__WEBPACK_IMPORTED_MODULE_2__["Observable"](function (ob) {
+                if (_this.checkContent()) {
+                    ob.next(_this.elRef.nativeElement.textContent.trim());
+                    ob.complete();
+                }
+            });
+            this.contentSubscription = this.contentObservable.subscribe(function (content) {
+                _this.createTyped();
+                _this.contentSubscription.unsubscribe();
+            });
+            return;
+        }
+        this.createTyped();
+    };
+    TypingAnimationDirective.prototype.ngOnChanges = function (changes) {
+        if (('condition' in changes) && this.typed) {
+            if (this.typingLock) {
+                return;
+            }
+            if (this.condition) {
+                this.typed.begin();
+                this.typingLock = true;
+            }
+        }
+    };
+    TypingAnimationDirective.prototype.checkContent = function () {
+        return this.elRef.nativeElement.textContent.trim().length > 0;
+    };
+    TypingAnimationDirective.prototype.createTyped = function () {
+        var _this = this;
+        this.typed = new _typed__WEBPACK_IMPORTED_MODULE_1__["Typed"](this.elRef.nativeElement, {
+            typeSpeed: this.typeSpeed,
+            startDelay: this.startDelay,
+            condition: this.condition,
+            hideCursorOnComplete: this.hideCursorOnComplete,
+            onComplete: function () {
+                _this.complete.emit(null);
+                _this.typingLock = false;
+            }
+        });
+        if (this.condition) {
+            this.typed.begin();
+            this.typingLock = true;
+        }
+    };
+    TypingAnimationDirective.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"], args: [{
+                    selector: '[typingAnimation]'
+                },] },
+    ];
+    /** @nocollapse */
+    TypingAnimationDirective.ctorParameters = function () { return [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"], },
+    ]; };
+    TypingAnimationDirective.propDecorators = {
+        'typeSpeed': [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['typeSpeed',] },],
+        'startDelay': [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['startDelay',] },],
+        'condition': [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['condition',] },],
+        'hideCursorOnComplete': [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"], args: ['hideCursorOnComplete',] },],
+        'complete': [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"], args: ['complete',] },],
+    };
+    return TypingAnimationDirective;
+}());
+
+//# sourceMappingURL=typing-animation.directive.js.map
+
+/***/ }),
+
+/***/ "./node_modules/angular-typing-animation/typing-animation.module.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/angular-typing-animation/typing-animation.module.js ***!
+  \**************************************************************************/
+/*! exports provided: TypingAnimationModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TypingAnimationModule", function() { return TypingAnimationModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _typing_animation_directive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./typing-animation.directive */ "./node_modules/angular-typing-animation/typing-animation.directive.js");
+
+
+var TypingAnimationModule = /** @class */ (function () {
+    function TypingAnimationModule() {
+    }
+    TypingAnimationModule.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
+                    declarations: [
+                        _typing_animation_directive__WEBPACK_IMPORTED_MODULE_1__["TypingAnimationDirective"]
+                    ],
+                    exports: [
+                        _typing_animation_directive__WEBPACK_IMPORTED_MODULE_1__["TypingAnimationDirective"]
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    TypingAnimationModule.ctorParameters = function () { return []; };
+    return TypingAnimationModule;
+}());
+
+//# sourceMappingURL=typing-animation.module.js.map
+
+/***/ }),
+
+/***/ "./node_modules/rxjs-compat/_esm2015/Observable.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/rxjs-compat/_esm2015/Observable.js ***!
+  \*********************************************************/
+/*! exports provided: Observable */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Observable", function() { return rxjs__WEBPACK_IMPORTED_MODULE_0__["Observable"]; });
+
+
+//# sourceMappingURL=Observable.js.map
+
+/***/ }),
+
 /***/ "./node_modules/rxjs/_esm2015/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/rxjs/_esm2015/index.js ***!

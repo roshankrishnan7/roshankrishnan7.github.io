@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Roshan Krishnan Thirikkott | My Portfolio</title>
@@ -8,9 +9,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Arvo|Bitter|Bree+Serif|Muli|Roboto+Slab:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Bitter|Bree+Serif|Muli|Roboto+Slab:700&display=swap"
+    rel="stylesheet">
+  <style>
+    .app-loading {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    .app-loading .spinner {
+      height: 100px;
+      width: 100px;
+      animation: rotate 2s linear infinite;
+      transform-origin: center center;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin: auto;
+    }
+
+    .app-loading .spinner .path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      animation: dash 1.5s ease-in-out infinite;
+      stroke-linecap: round;
+      stroke: #b00020;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
-  <app-root></app-root>
+  <section class="hero is-fullheight">
+    <div class="hero-bidy">
+      <app-root>
+        <!-- loading layout replaced by app after startupp -->
+        <div class="app-loading">
+          <div class="logo"></div>
+          <svg class="spinner" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+          </svg>
+        </div>
+      </app-root>
+    </div>
+  </section>
 <script src="runtime-es2015.js" type="module"></script><script src="polyfills-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule></script><script src="polyfills-es5.js" nomodule></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule></script><script src="vendor-es2015.js" type="module"></script><script src="main-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule></script><script src="main-es5.js" nomodule></script></body>
+
 </html>
