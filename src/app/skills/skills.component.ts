@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Skill } from '../_shared/skill.model';
+import { SkillsService } from './skills.service';
 
 @Component({
   selector: 'app-skills',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
+skills: Skill[];
+
+  constructor(private skillsService: SkillsService) { }
 
   ngOnInit() {
+    this.skills = this.skillsService.getSkills();
   }
 
 }

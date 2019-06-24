@@ -12,6 +12,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { WorkComponent } from './work/work.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SocialsComponent } from './socials/socials.component';
+import { SkillItemComponent } from './skills/skill-item/skill-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SocialsComponent } from './socials/socials.component';
     SkillsComponent,
     WorkComponent,
     ProjectsComponent,
-    SocialsComponent
+    SocialsComponent,
+    SkillItemComponent
   ],
   imports: [
     BrowserModule,

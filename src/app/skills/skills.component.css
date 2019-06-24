@@ -1,0 +1,13 @@
+.column {
+    margin: 10px !important;
+    padding: 20px !important;
+}
+
+.tile {
+    margin: 50 px;
+    padding: 15px;
+}
+
+.skill-item {
+    margin: 20px;
+}
