@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { MatIconModule } from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TypingAnimationDirective } from 'angular-typing-animation'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +33,8 @@ import { SkillItemComponent } from './skills/skill-item/skill-item.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatIconModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
