@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  about works!\n</p>\n"
+module.exports = "<div class=\"container card\">\n    <div class=\"card-image\">\n      <figure class=\"image is-3by2\">\n        <img src=\"https://bulma.io/images/placeholders/1280x960.png\" alt=\"Placeholder image\">\n      </figure>\n    </div>\n    <div class=\"card-content\">\n      <div class=\"media\">\n        <div class=\"media-left\">\n          <figure class=\"image is-48x48\">\n            <img src=\"https://bulma.io/images/placeholders/96x96.png\" alt=\"Placeholder image\">\n          </figure>\n        </div>\n        <div class=\"media-content\">\n          <p class=\"title is-4\">John Smith</p>\n          <p class=\"subtitle is-6\">@johnsmith</p>\n        </div>\n      </div>\n  \n      <div class=\"content\">\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n        Phasellus nec iaculis mauris.\n        <br>\n      </div>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -149,7 +149,7 @@ class Skill {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Fib3V0L2Fib3V0LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "img {\n    max-height: 500px;\n    width: 100%;\n    height: 100%;\n}\n\n.card {\n    width: 50%;\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWJvdXQvYWJvdXQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtJQUNqQixXQUFXO0lBQ1gsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFVBQVU7SUFDViw0RUFBNEU7QUFDaEYiLCJmaWxlIjoic3JjL2FwcC9hYm91dC9hYm91dC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW1nIHtcbiAgICBtYXgtaGVpZ2h0OiA1MDBweDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7XG59XG5cbi5jYXJkIHtcbiAgICB3aWR0aDogNTAlO1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwgMCwgMCwgMC4yKSwgMCA2cHggMjBweCAwIHJnYmEoMCwgMCwgMCwgMC4xOSk7XG59Il19 */"
 
 /***/ }),
 
@@ -198,13 +198,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _skills_skills_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./skills/skills.component */ "./src/app/skills/skills.component.ts");
-/* harmony import */ var _work_work_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./work/work.component */ "./src/app/work/work.component.ts");
-/* harmony import */ var _projects_projects_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./projects/projects.component */ "./src/app/projects/projects.component.ts");
-/* harmony import */ var _socials_socials_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./socials/socials.component */ "./src/app/socials/socials.component.ts");
-
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _skills_skills_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./skills/skills.component */ "./src/app/skills/skills.component.ts");
+/* harmony import */ var _work_work_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./work/work.component */ "./src/app/work/work.component.ts");
+/* harmony import */ var _projects_projects_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projects/projects.component */ "./src/app/projects/projects.component.ts");
+/* harmony import */ var _socials_socials_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./socials/socials.component */ "./src/app/socials/socials.component.ts");
 
 
 
@@ -214,14 +212,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"], pathMatch: 'full' },
-    { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"], pathMatch: 'full' },
-    { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_3__["AboutComponent"], pathMatch: 'full' },
-    { path: 'skills', component: _skills_skills_component__WEBPACK_IMPORTED_MODULE_5__["SkillsComponent"], pathMatch: 'full' },
-    { path: 'work', component: _work_work_component__WEBPACK_IMPORTED_MODULE_6__["WorkComponent"], pathMatch: 'full' },
-    { path: 'projects', component: _projects_projects_component__WEBPACK_IMPORTED_MODULE_7__["ProjectsComponent"], pathMatch: 'full' },
-    { path: 'socials', component: _socials_socials_component__WEBPACK_IMPORTED_MODULE_8__["SocialsComponent"], pathMatch: 'full' },
-    { path: '*', component: _home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"], pathMatch: 'full' },
+    { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], pathMatch: 'full' },
+    { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], pathMatch: 'full' },
+    { path: 'about', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], pathMatch: 'full' },
+    { path: 'skills', component: _skills_skills_component__WEBPACK_IMPORTED_MODULE_4__["SkillsComponent"], pathMatch: 'full' },
+    { path: 'work', component: _work_work_component__WEBPACK_IMPORTED_MODULE_5__["WorkComponent"], pathMatch: 'full' },
+    { path: 'projects', component: _projects_projects_component__WEBPACK_IMPORTED_MODULE_6__["ProjectsComponent"], pathMatch: 'full' },
+    { path: 'socials', component: _socials_socials_component__WEBPACK_IMPORTED_MODULE_7__["SocialsComponent"], pathMatch: 'full' },
+    { path: '*', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], pathMatch: 'full' },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -480,7 +478,7 @@ ProjectsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".tag {\n    padding: 10px;\n    margin: 10px 5px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2tpbGxzL3NraWxsLWl0ZW0vc2tpbGwtaXRlbS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksYUFBYTtJQUNiLGdCQUFnQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL3NraWxscy9za2lsbC1pdGVtL3NraWxsLWl0ZW0uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50YWcge1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gICAgbWFyZ2luOiAxMHB4IDVweDtcbn0iXX0= */"
+module.exports = ".tag {\n    padding: 5px;\n    margin: 5px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2tpbGxzL3NraWxsLWl0ZW0vc2tpbGwtaXRlbS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLFdBQVc7QUFDZiIsImZpbGUiOiJzcmMvYXBwL3NraWxscy9za2lsbC1pdGVtL3NraWxsLWl0ZW0uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50YWcge1xuICAgIHBhZGRpbmc6IDVweDtcbiAgICBtYXJnaW46IDVweDtcbn0iXX0= */"
 
 /***/ }),
 
@@ -594,7 +592,8 @@ let SkillsService = class SkillsService {
             new _shared_skill_model__WEBPACK_IMPORTED_MODULE_2__["Skill"](["Angular", "AngularJS", "React", "CSS"], "Client side"),
             new _shared_skill_model__WEBPACK_IMPORTED_MODULE_2__["Skill"](["SQL Server", "Oracle", "MongoDB", "MySQL"], "Database"),
             new _shared_skill_model__WEBPACK_IMPORTED_MODULE_2__["Skill"](["xUnit", "MS Test", "Jasmine", "Protractor", "Selenium"], "Testing"),
-            new _shared_skill_model__WEBPACK_IMPORTED_MODULE_2__["Skill"](["EF", "EF Core", "LINQ", "Docker", "Jenkins", "Kubernetes", "RabbitMQ", "Bootstrap", "Material", "Bulma"], "Other Tools and Frameworks")
+            new _shared_skill_model__WEBPACK_IMPORTED_MODULE_2__["Skill"](["EF", "EF Core", "LINQ", "Docker", "Jenkins", "Kubernetes", "RabbitMQ", "Git", "Bitbucket", "JIRA", "YouTrack", "AWS", "Azure",
+                "Visual Studio", "Bootstrap", "Material", "Bulma"], "Other Tools and Frameworks")
         ];
     }
     getSkills() {
