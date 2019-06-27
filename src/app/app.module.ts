@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { MatIconModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { TypingAnimationDirective } from 'angular-typing-animation'
+import { TypingAnimationModule } from 'angular-typing-animation'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +18,6 @@ import { SkillItemComponent } from './skills/skill-item/skill-item.component';
 
 @NgModule({
   declarations: [
-    TypingAnimationDirective,
 
     AppComponent,
     AboutComponent,
@@ -35,6 +34,7 @@ import { SkillItemComponent } from './skills/skill-item/skill-item.component';
     AppRoutingModule,
     MatIconModule,
     BrowserAnimationsModule,
+    TypingAnimationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
